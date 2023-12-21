@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    background: black;
+}
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://res.cloudinary.com/dtyombve3/image/upload/f_auto,q_auto/irooasdt8yo7jbvoxqwa'); /* Replace 'path/to/your/image.jpg' with your image path */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Apply a blur effect to this overlay */
+    z-index: -1;
+  }
