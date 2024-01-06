@@ -1,17 +1,41 @@
-// CustomCursor.js
-import React from 'react';
-import { AnimatedCursor } from 'react-animated-cursor';
+// components/Cursor.js
+
+import { useEffect, useState } from 'react';
+// import styles from './Cursor.module.css'; // Create a separate CSS module for cursor styles
 
 const Cursor = () => {
+  useEffect(() => {
+    const cursor = document.querySelector('.cursor');
+    const follower = document.querySelector('.cursor-follower');
+    
+    const moveCursor = (e) => {
+      const { clientX, clientY } = e;
+      cursor.style.left = `${clientX}px`;
+      cursor.style.top = `${clientY}px`;
+      // follower.style.left = `${clientX}px`;
+      // follower.style.top = `${clientY}px`;
+    };
+    
+    
+    const addListeners = () => {
+      document.addEventListener('mousemove', moveCursor);
+    };
+
+    addListeners();
+
+    return () => {
+      document.removeEventListener('mousemove', moveCursor);
+    };
+  }, []);
+ 
+
   return (
-    <AnimatedCursor
-      innerSize={8}
-      outerSize={8}
-      color='rgba(255, 255, 255, 0.5)'
-      outerAlpha={0.2}
-      innerScale={0.7}
-      outerScale={5}
-    />
+    <>
+    <div>
+      <div className="cursor"></div>
+      <div className="cursorFollower"></div>
+    </div>
+    </>
   );
 };
 

@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-spring/parallax": "^9.7.3",
+    "lodash.shuffle": "^4.2.0",
     "next": "14.0.1",
-    "react": "^18",
+    "react": "^18.2.0",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18",
     "react-parallax": "^3.5.1",
     "react-scroll-parallax": "^3.4.5",
-    "react-spring": "^9.7.3"
+    "react-spring": "^9.7.3",
+    "react-use-parallax": "^0.1.0",
+    "spring": "^0.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

@@ -52,25 +52,80 @@ body{
   }
 
   .card{
-    box-shadow: 0 0 15px #01eeff ;
+    border: 4px solid black;
+    border-image: linear-gradient(45deg, #009fff,black, #ff0101);
+    border-image-slice: 1;
     
   }
-  .card:hover{
-    box-shadow: 0 0 35px #01eeff ;
-    /* text-shadow: 0 0 35px #01eeff ; */
-    
-  }
-  .image{
-    box-shadow: 0 0 15px #01eeff;
+  .image1{
+    border: 4px solid black;
+    border-image: linear-gradient(45deg, #009fff,black, #ff0101);
+    border-image-slice: 1;
+    /* box-shadow: 2px 2px 4px 0 #01eeff ; */
   }
   .customButtom{
-    border: 2px solid black;
+    border: 2px solid transparent;
     transition: 0.5s;
-    box-shadow: 0 0 25px black;
+    box-shadow: 0 0 25px transparent;
   }
   .customButtom:hover{
     border: 2px solid black;
-    border-image: linear-gradient(45deg, #01eeff,black, #01eeff);
+    border-image: linear-gradient(45deg, #01eeff,black, #009fff);
     border-image-slice: 1;
-    box-shadow: 2px 2px 4px 0 #01eeff ;
+    box-shadow: 2px 2px 4px 0 #009fff ;
   }
+  .navFont{
+    /* Example usage */
+font-family: 'Aileron', sans-serif;
+
+  }
+  .trailsText {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    color: black;
+    font-size: 6em;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    will-change: transform, opacity;
+    overflow: hidden;
+  }
+  
+  .trailsText > div {
+    padding-right: 0.05em;
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    color: white;
+  }
+/* components/Cursor.module.css */
+
+.cursor,
+.cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #00b1c9;
+  box-shadow: 0 0 35px #009fff;
+  pointer-events: none;
+  /* z-index: 9999; */
+  transition: all 0.3s ease;
+}
+
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  background-image: #009fff;
+}
+
+
+
+  
+  
