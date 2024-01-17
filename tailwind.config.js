@@ -18,6 +18,9 @@ module.exports = {
       colors: {
         customBlue: '#009fff',
       },
+      height: {
+        'custom': '1000px', // You can change the height value as needed
+      },
     },
   },
   plugins: [],

@@ -2,8 +2,21 @@ import Navbar from "./components/Navbar";
 import { Parallax } from 'react-parallax';
 import { useState, useEffect, useRef  } from 'react';
 import Cursor from "./components/Cursor";
+import Testimonials from "./components/testimonials/Testimonials";
 import Opencard from "./components/opencard/Opencard";
 import Movingcard from "./components/movingcard/Movingcard";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-cube';
+import 'swiper/css/pagination';
+
+// import './styles.css';
+
+// import required modules
+import { EffectCube, Pagination } from 'swiper/modules';
+import Footer from "./components/Footer";
 
 const Homepage = (props) => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -56,6 +69,7 @@ const Homepage = (props) => {
 
   return (
     <div>
+      <Navbar/>
       <audio ref={audioRef} src="https://res.cloudinary.com/dtyombve3/video/upload/f_auto:video,q_auto/ruucz8kicbt4z5xrnzti" type="audio/mpeg"></audio>
 
       <div>
@@ -78,9 +92,15 @@ const Homepage = (props) => {
             }}
           >
             {/* Your image content */}
-            <section class="image bg-center bg-no-repeat bg-[url('https://res.cloudinary.com/dtyombve3/image/upload/f_auto,q_auto/irooasdt8yo7jbvoxqwa')] h-screen bg-blend-multiply">
+            
+
+            <section class="bg-image image bg-center bg-no-repeat bg-blend-multiply">
               <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+                
                 <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">We invest in the world’s potential</h1>
+                <div class="h-10 flex items-center justify-center">
+  <img src="https://res.cloudinary.com/dtyombve3/image/upload/v1704911673/lol-01_y5lmqj.png" className="h-custom -z-10" alt="" />
+</div>
                 <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
               </div>
             </section>
@@ -107,16 +127,16 @@ const Homepage = (props) => {
               // Fix the position of the section content // Reduce opacity based on scroll position
             }}
           >
-            <section class="text-gray-600 body-font mx-24">
+            <section class="text-gray-600 body-font mx-24 ">
               <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 shadow-lg border-2 image1">
                   <img class="object-cover object-center rounded" alt="hero" src="https://res.cloudinary.com/dtyombve3/image/upload/f_auto,q_auto/zja6xadjetzle7kdayit" />
                 </div>
-                <div class="lg:flex-grow md:w-1/2 lg:pl-24 text-customBlue md:pl-16 flex flex-col md:items-start md:text-left items-center transition-all text-center gradient-text border-2 ml-8  h-96 justify-center card">
+                <div class="lg:flex-grow md:w-1/2 lg:pl-24 text-customBlue md:pl-16 flex flex-col md:items-start md:text-left items-center transition-all text-center gradient-text border-2 ml-8  h-96 justify-center card bg-black">
                   <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-shadow-md ">Before they sold out
                     <br class="hidden lg:inline-block" />readymade gluten
                   </h1>
-                  <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+                  <p class="mb-8 leading-relaxed bg-">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
        
                 <button onClick={handleClick} className="text-customBlue customButtom text-xl p-3 transition-all m-1 ">Know More</button>
            
@@ -136,22 +156,7 @@ const Homepage = (props) => {
                 transform: `rotate(${(scrollPosition-1350)*0.2}deg)`
               }}
             > */}
-        <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-    
-      <div class="sm:w-1/2 mb-10 px-4 absolute right-0">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="https://images.pexels.com/photos/3791466/pexels-photo-3791466.jpeg?auto=compress&cs=tinysrgb&w=600"/>
-        </div>
-        <h2 class="title-font text-2xl font-medium text-customBlue mt-6 mb-3">The Catalyzer</h2>
-        <p class="leading-relaxed text-customBlue">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
-        <button onClick={handleClick} className="text-customBlue customButtom text-xl p-3 transition-all m-1 ">Know More</button>
-
-      </div>
-    </div>
-  </div>
-</section>
+       
 {/* </div>
 </Parallax> */}
         {/* <Parallax 
@@ -164,23 +169,7 @@ const Homepage = (props) => {
                 transformOrigin:'bottom left',
                 transform: `rotate(${(-scrollPosition-1600)*0.2}deg)`
               }}
-            > */}
-        <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-    
-      <div class="sm:w-1/2 mb-10 px-4 absolute left-0">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="https://images.pexels.com/photos/3791466/pexels-photo-3791466.jpeg?auto=compress&cs=tinysrgb&w=600"/>
-        </div>
-        <h2 class="title-font text-2xl font-medium text-customBlue mt-6 mb-3">The Catalyzer</h2>
-        <p class="leading-relaxed text-customBlue">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
-        <button onClick={handleClick} className="text-customBlue customButtom text-xl p-3 transition-all m-1 ">Know More</button>
-
-      </div>
-    </div>
-  </div>
-</section>
+     
 {/* </div>
 </Parallax> */}
 {/* <Parallax 
@@ -193,23 +182,7 @@ const Homepage = (props) => {
                 transformOrigin:'bottom right',
                 transform: `rotate(${(scrollPosition-2808)*0.2}deg)`
               }}
-            > */}
-        <section class="text-gray-600 body-font mt-20">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-    
-      <div class="sm:w-1/2 mb-10 px-4 absolute right-0">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="https://images.pexels.com/photos/3791466/pexels-photo-3791466.jpeg?auto=compress&cs=tinysrgb&w=600"/>
-        </div>
-        <h2 class="title-font text-2xl font-medium text-customBlue mt-6 mb-3">The Catalyzer</h2>
-        <p class="leading-relaxed text-customBlue">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
-        <button onClick={handleClick} className="text-customBlue customButtom text-xl p-3 transition-all m-1 ">Know More</button>
-
-      </div>
-    </div>
-  </div>
-</section>
+     
 {/* </div>
 </Parallax> */}
 {/* <Parallax 
@@ -224,51 +197,21 @@ const Homepage = (props) => {
                 transform: `rotate(${(-scrollPosition-3600)*0.2}deg)`
               }}
             > */}
-        <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
     
-      <div class="sm:w-1/2 mb-10 px-4 absolute left-0">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="https://images.pexels.com/photos/3791466/pexels-photo-3791466.jpeg?auto=compress&cs=tinysrgb&w=600"/>
-        </div>
-        <h2 class="title-font text-2xl font-medium text-customBlue mt-6 mb-3">The Catalyzer</h2>
-        <p class="leading-relaxed text-customBlue">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
-        <button onClick={handleClick} className="text-customBlue customButtom text-xl p-3 transition-all m-1 ">Know More</button>
-
-      </div>
-    </div>
-  </div>
-</section>
 <div className="mt-96">
   
+<Testimonials/>
 <Movingcard/>
 </div>
 {/* </div>
 </Parallax> */}
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+       
       </div>
 
 
     
 
-
+<Footer/>
     </div>
 
 

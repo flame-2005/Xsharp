@@ -9,7 +9,6 @@ const Navbar = () => {
   const audioRef = useRef(null);
 
   const handleClick = () => {
-    // Play audio when clicked
     audioRef.current.play();
   }
   return (
@@ -25,7 +24,7 @@ const Navbar = () => {
       </head>
       <nav class="flex items-center justify-between px-6  mx-auto fixed top-0 w-full z-10 text-xl navFont bg-black">
     <div class="flex items-center">
-        <span class="text-lg font-semibold text-gray-800 w-8 ml-4"><img src="https://res.cloudinary.com/dtyombve3/image/upload/f_auto,q_auto/irooasdt8yo7jbvoxqwa" alt="" /></span>
+        <span class="text-lg font-semibold text-gray-800 w-8 ml-4"><img src="https://res.cloudinary.com/dtyombve3/image/upload/v1704911673/lol-01_y5lmqj.png" alt="" /></span>
     </div>
     <div class="flex items-center justify-center flex-1">
         <Link href={'/Homepage'}><p onClick={handleClick} class="mx-8 px-4 py-1 my-1 text-white hover:text-customBlue customButtom transition-transform ease-in-out duration-200"><i className='left-0 h-full w-2 bg-white'></i><span>Home</span></p></Link>

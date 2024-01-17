@@ -3,9 +3,23 @@
 @tailwind utilities;
 
 
-body{
-     background: black;
-} 
+body {
+  /* background-image: url('https://res.cloudinary.com/dtyombve3/image/upload/v1704910911/istockphoto-668544908-640x640_zgj8o0.jpg'); */
+  background-size: cover;
+  background: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Other styles for the body */
+  margin: 0;
+  padding: 0;
+  /* Ensure full screen coverage */
+  height: 100vh;
+}
+
+.bg-image{
+  background: url('https://res.cloudinary.com/dtyombve3/image/upload/v1704911673/lol-01_y5lmqj.png');
+}
+
 .blur {
     position: absolute;
     width: 100%;
@@ -124,6 +138,29 @@ font-family: 'Aileron', sans-serif;
   height: 40px;
   background-image: #009fff;
 }
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 
 

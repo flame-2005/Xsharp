@@ -1,8 +1,10 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
 const about = () => {
   return (
     <div>
+        <Navbar/>
       <section class="flex items-center py-10 xl:h-screen font-poppins ">
         <div class="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
             <div class="flex flex-wrap ">

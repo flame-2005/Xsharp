@@ -1,8 +1,10 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
 const contact = () => {
   return (
     <div>
+        <Navbar/>
       <section class="relative overflow-hidden font-poppins">
         <div class="absolute bottom-0 left-0 hidden w-full h-full lg:block lg:w-4/12">
             <img class="object-cover w-full h-full"

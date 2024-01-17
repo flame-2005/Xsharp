@@ -19,7 +19,8 @@
     "react-scroll-parallax": "^3.4.5",
     "react-spring": "^9.7.3",
     "react-use-parallax": "^0.1.0",
-    "spring": "^0.0.0"
+    "spring": "^0.0.0",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
