@@ -211,7 +211,7 @@ const Homepage = (props) => {
 
     
 
-<Footer/>
+{/* <Footer/> */}
     </div>
 
 

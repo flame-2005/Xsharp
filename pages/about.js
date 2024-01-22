@@ -11,12 +11,12 @@ const about = () => {
                 <div class="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
                     <div class="relative">
                         <img src="https://i.postimg.cc/QtyYkbxp/pexels-andrea-piacquadio-927022.jpg" alt=""
-                            class="relative z-40 object-cover w-full h-96 lg:rounded-tr-[80px] lg:rounded-bl-[80px] rounded"/>
+                            class="relative z-10 object-cover w-full h-96 lg:rounded-tr-[80px] lg:rounded-bl-[80px] rounded"/>
                         <div
-                            class="absolute z-10 hidden w-full h-full bg-customBlue rounded-bl-[80px] rounded -bottom-6 right-6 lg:block">
+                            class="absolute hidden w-full h-full bg-customBlue rounded-bl-[80px] rounded -bottom-6 right-6 lg:block">
                         </div>
                         <div
-                            class="absolute z-50 text-blue-400 transform -translate-y-1/2 cursor-pointer top-1/2 left-[46%] hover:text-blue-500">
+                            class="absolute text-blue-400 transform -translate-y-1/2 cursor-pointer top-1/2 left-[46%] hover:text-blue-500">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="w-14 h-14 bi bi-play-circle-fill" viewBox="0 0 16 16">
                                 <path
@@ -26,7 +26,7 @@ const about = () => {
                         </div>
                     </div>
                 </div>
-                <div class="w-full px-4 mb-10 lg:w-1/2 lg:mb-0 ">
+                <div class="bg-black card  p-5 w-full px-4 mb-10 lg:w-1/2 lg:mb-0 ">
                     <div class="relative">
                         <h1
                             class="absolute -top-20   left-0 text-[20px] lg:text-[100px] text-gray-900 font-bold  dark:text-gray-200 opacity-5 md:block hidden">

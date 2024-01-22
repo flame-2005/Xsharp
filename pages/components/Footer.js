@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-<section class="flex flex-col h-screen lg:justify-end font-poppins">
+<section class="flex flex-col lg:justify-end font-poppins">
         <div class="relative py-10 bg-center bg-no-repeat bg-cover">
             <div class="absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-60 "></div>
             <div class="relative z-10 justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-0">

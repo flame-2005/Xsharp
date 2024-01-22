@@ -43,7 +43,7 @@ export default function App() {
                     <div class=" card mb-0 overflow-hidden rounded shadow bg-black" href="#">
                         <div class="relative overflow-hidden h-72">
                             <img class="object-cover w-full h-full transition-all hover:scale-110"
-                                src="https://i.postimg.cc/KvrSzTxg/alexandru-zdrobau-dj-RG1v-B1pw-unsplash.jpg" alt=""/>
+                                src="https://res.cloudinary.com/dtyombve3/image/upload/v1705515475/062926f4-df98-4625-a661-b7bca81b67ff_ky8c0j.webp" alt=""/>
                         </div>
                         <div class="relative z-20 p-8 -mt-14 ">
                             <span class="inline-block p-3 mb-3 text-xs text-white bg-blue-500 rounded-full">
@@ -71,7 +71,7 @@ export default function App() {
                     <div class="card mb-0 overflow-hidden rounded shadow bg-black" href="#">
                         <div class="relative overflow-hidden h-72">
                             <img class="object-cover w-full h-full transition-all hover:scale-110"
-                                src="https://i.postimg.cc/j5N31VjJ/jason-yoder-s4n-S3mun-Sg8-unsplash.jpg" alt=""/>
+                                src="https://res.cloudinary.com/dtyombve3/image/upload/v1705515552/2b0c9650-5ca7-49ee-92ba-7890ca5cb350_jpadzl.webp" alt=""/>
                         </div>
                         <div class="relative z-20 p-8 -mt-14 ">
                             <span class="inline-block p-3 mb-3 text-xs text-white bg-blue-500 rounded-full">
@@ -113,7 +113,7 @@ export default function App() {
                     <div class="card mb-0 overflow-hidden rounded shadow bg-black" href="#">
                         <div class="relative overflow-hidden h-72">
                             <img class="object-cover w-full h-full transition-all hover:scale-110"
-                                src="https://i.postimg.cc/KvrSzTxg/alexandru-zdrobau-dj-RG1v-B1pw-unsplash.jpg" alt=""/>
+                                src="https://res.cloudinary.com/dtyombve3/image/upload/v1705515661/08f23b47-5bd8-4251-addc-2a010997c59d_tnqavj.webp" alt=""/>
                         </div>
                         <div class="relative z-20 p-8 -mt-14 ">
                             <span class="inline-block p-3 mb-3 text-xs text-white bg-blue-500 rounded-full">

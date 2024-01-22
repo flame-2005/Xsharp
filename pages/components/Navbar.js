@@ -1,44 +1,139 @@
-import React from 'react'
-import Link from 'next/link'
-import { useState, useEffect, useRef  } from 'react';
-
-
+// components/Navbar.js
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
-  
-  const audioRef = useRef(null);
+  const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
-    audioRef.current.play();
-  }
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/alpinejs@2.x.x/dist/alpine.min.js'; // Adjust the version if needed
+    script.defer = true;
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
-    <div>
-      <audio ref={audioRef} src="https://res.cloudinary.com/dtyombve3/video/upload/f_auto:video,q_auto/ruucz8kicbt4z5xrnzti" type="audio/mpeg"></audio>
+    <section className="shadow-lg font-poppins w-full sticky top-0 bg-black z-20 py-2">
+      <div className="max-w-6xl mx-auto bg-black" x-data="{open:false}">
+        <div className="relative flex items-center bg-black justify-between">
+          <a href="#" className="text-3xl font-semibold leading-none text-customBlue">
+            <img src="https://res.cloudinary.com/dtyombve3/image/upload/v1704911673/lol-01_y5lmqj.png" className='h-10' alt="" />
+          </a>
 
-      <head>
-      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700|Exo:400,700|Orbitron:400,700|Futura|Aileron:400,700&display=swap" rel="stylesheet"/>
+          <div className="lg:hidden">
+            <button
+              className="flex items-center px-3 py-2 border border-blue-200 rounded text-customBlue navbar-burger hover:text-blue-800 hover:border-blue-300 lg:hidden"
+              onClick={() => setOpen(true)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-list"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+            </button>
+          </div>
 
-      <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-      <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet"/>
-      </head>
-      <nav class="flex items-center justify-between px-6  mx-auto fixed top-0 w-full z-10 text-xl navFont bg-black">
-    <div class="flex items-center">
-        <span class="text-lg font-semibold text-gray-800 w-8 ml-4"><img src="https://res.cloudinary.com/dtyombve3/image/upload/v1704911673/lol-01_y5lmqj.png" alt="" /></span>
-    </div>
-    <div class="flex items-center justify-center flex-1">
-        <Link href={'/Homepage'}><p onClick={handleClick} class="mx-8 px-4 py-1 my-1 text-white hover:text-customBlue customButtom transition-transform ease-in-out duration-200"><i className='left-0 h-full w-2 bg-white'></i><span>Home</span></p></Link>
-        <Link href={'/about'}><p onClick={handleClick} class="mx-8 px-4 py-1 my-1 text-white hover:text-customBlue customButtom transition-transform ease-in-out duration-200"><i className='left-0 h-full w-2 bg-white'></i><span>About</span></p></Link>
-        <Link href={'/team'}><p onClick={handleClick} class="mx-8 px-4 py-1 my-1 text-white hover:text-customBlue customButtom transition-transform ease-in-out duration-200"><i className='left-0 h-full w-2 bg-white'></i><span>Team</span></p></Link>
-        <Link href={'contact'}><p onClick={handleClick} class="mx-8 px-4 py-1 my-1 text-white hover:text-customBlue customButtom transition-transform ease-in-out duration-200"><i className='left-0 h-full w-2 bg-white'></i><span>Contact</span></p></Link>
-    </div>
-</nav>
+          <ul className="hidden lg:w-auto lg:space-x-12 lg:items-center lg:flex">
+            <li>
+              <Link href="/Homepage" className="customButtom p-2 text-l font-bold text-customBlue hover:text-blue-700">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about"className="customButtom p-2 text-l font-bold text-customBlue hover:text-blue-700">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="customButtom p-2 text-l font-bold text-customBlue hover:text-blue-700">
+                Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link href="/team" className="customButtom p-2 text-l font-bold  text-customBlue hover:text-blue-700">
+                Our Team
+              </Link>
+            </li>
+            
+          </ul>
 
+          
+        </div>
 
+        {/* Mobile Sidebar */}
+        <div className='z-50'>
+        <div
+          className={`fixed inset-0 w-full bg-gray-900 opacity-25 lg:hidden ${open ? 'translate-x-0 ease-in-opacity-100' : '-translate-x-full ease-out opacity-0'
+            }`}
+        ></div>
 
+        <div
+          className={`absolute inset-0 z-10 h-screen p-3 text-customBlue duration-500 transform bg-black w-80 lg:hidden lg:transform-none lg:relative ${open ? 'translate-x-0 ease-in-opacity-100' : '-translate-x-full ease-out opacity-0'
+            }`}
+        >
+          <div className="flex justify-between lg:flex z-50">
+            <a className="p-2 text-2xl font-bold text-customBlue" href="#">
+            <img src="https://res.cloudinary.com/dtyombve3/image/upload/v1704911673/lol-01_y5lmqj.png" className='h-10' alt="" />
+            </a>
+            <button
+              className="p-2 text-customBlue rounded-md hover:text-blue-300 lg:hidden"
+              onClick={() => setOpen(false)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                className="bi bi-x-circle"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </button>
+          </div>
+          <ul className="px-4 text-left mt-7">
+            <li class="pb-3">
+              <Link href="/" class="text-sm text-customBlue hover:text-blue-400">
+                Home
+              </Link>
+            </li>
+            <li class="pb-3">
+              <Link href="/about" class="text-sm text-customBlue hover:text-blue-400">
+                About us
+              </Link>
+            </li>
+            <li class="pb-3">
+              <Link href="/contact" class="text-sm text-customBlue hover:text-blue-400">
+                Contact Us
+              </Link>
+            </li>
+            <li class="pb-3">
+              <Link href="/team" class="text-sm text-customBlue hover:text-blue-400">
+                Our Team
+              </Link>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+      </div>
+    </section>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;

@@ -8,7 +8,7 @@ const contact = () => {
       <section class="relative overflow-hidden font-poppins">
         <div class="absolute bottom-0 left-0 hidden w-full h-full lg:block lg:w-4/12">
             <img class="object-cover w-full h-full"
-                src="https://i.postimg.cc/ncQQ9Vjt/pexels-quang-nguyen-vinh-3355777.jpg" alt=""/>
+                src="https://res.cloudinary.com/dtyombve3/image/upload/v1705818537/15185ae1-4f0d-48ee-b76c-34bbd9a9177e_krvxyb.jpg" alt=""/>
         </div>
         <div class="container relative px-4 mx-auto">
             <div class="max-w-5xl mx-auto">
@@ -45,7 +45,7 @@ const contact = () => {
                             </form>
                         </div>
                     </div>
-                    <div class="w-full px-4 mb-8 lg:w-2/5 lg:mb-0">
+                    <div class="w-full px-4 mb-8 lg:w-2/5 lg:mb-0 backdrop-blur-lg">
                         <span class="text-lg font-bold text-blue-500">Connect with us </span>
                         <h2 class="mt-6 mb-8 text-4xl font-bold md:mb-10 ">Lets get connected</h2>
                         <div class="flex items-center mb-6">
